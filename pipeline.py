@@ -29,7 +29,7 @@ def run(argv=None):
                 | 'convert to dic' >> beam.ParDo(convert_json_to_dic())
                 | 'get wind by timepoint' >> beam.ParDo(get_wind_by_timepoint(), config['transform'])
                 | 'convert to str' >> beam.ParDo(convert_json_to_str())
-                #| 'load' >> beam.io.WriteToText(file_path_prefix=file, file_name_suffix='.txt')
+                #| 'load' >> beam.io.WriteToText(file_path_prefix=file, file_name_suffix='.txt')  # can be used instead of load_data()
                 | 'load' >> beam.ParDo(load_data(), config['load'])
         )
 
