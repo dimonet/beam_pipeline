@@ -1,0 +1,4 @@
+{
+    "direction": "N",
+    "speed": 3
+}
