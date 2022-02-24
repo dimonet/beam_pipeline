@@ -16,7 +16,6 @@ class get_wind_by_timepoint(beam.DoFn):
         timepoints = element['dataseries']      # get only timepoint data
         for timepoint in timepoints:
             if timepoint['timepoint'] == timepoint_id:
-                #res = json.dumps(timepoint['wind10m'], indent=4)
                 res = timepoint['wind10m']      # get wind data for a requested timepoint
         return [res]
 
